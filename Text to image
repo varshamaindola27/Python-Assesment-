@@ -1,0 +1,17 @@
+from PIL import Image, ImageDraw, ImageFont
+
+txt = input("Please enter your text: ")
+
+image = Image.new("RGB", (800, 300), "white")
+draw = ImageDraw.Draw(image)
+
+# Use a better font size
+font = ImageFont.truetype("arial.ttf", 40)  # or use a font path on your system
+
+draw.text((50, 50), txt, fill="black", font=font)
+
+# Save the image
+image.save("text_image.png")
+
+# Display if needed
+image.show()
